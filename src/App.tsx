@@ -4,21 +4,50 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Count from "./count";
 
-type people = {
+// interface People {
+//   name: string;
+//   age: number;
+//   location?: string;
+// }
+
+// interface RelationShip {
+//   wifeName: string;
+//   childName: string;
+// }
+
+// interface Employee extends People, RelationShip {
+//   jobTitle: string;
+//   degree: string;
+// }
+
+type People = {
   name: string;
   age: number;
   location?: string;
 };
 
+type RelationShip = {
+  wifeName: string;
+  childName: string;
+};
+
+type Employee = People &
+  RelationShip & {
+    jobTitle: string;
+    degree: string;
+  };
+
 function App() {
   const [count, setCount] = useState<number>(0);
-  const [people, setPeople] = useState<people>();
-  // const emplyee = {
-  //   name: "Employee",
-  //   age: 48,
-  //   jobTitle: "Developer",
-  //   degree: "Bachelor",
-  // };
+  const [people, setPeople] = useState<People>();
+  const employee: Employee = {
+    name: "Employee",
+    age: 48,
+    jobTitle: "Developer",
+    degree: "Bachelor",
+    wifeName: "Wife",
+    childName: "Child",
+  };
 
   useEffect(() => {
     setPeople({ name: "John", age: 30, location: "USA" });
