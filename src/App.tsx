@@ -43,6 +43,7 @@ type Employee = People &
   RelationShip & {
     jobTitle: string;
     degree: Degree;
+    level?: string | number | Degree;
   };
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
     degree: Degree.BACHELORS,
     wifeName: "Wife",
     childName: "Child",
+    level: "Level",
   };
 
   useEffect(() => {
