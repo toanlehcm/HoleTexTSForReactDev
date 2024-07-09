@@ -59,6 +59,16 @@ function App() {
     level: "Level",
   };
 
+  const employee2: typeof employee = {
+    name: "Employee2",
+    age: 48,
+    jobTitle: "Developer",
+    degree: Degree.BACHELORS,
+    wifeName: "Wife",
+    childName: "Child",
+    level: "Level",
+  };
+
   useEffect(() => {
     setPeople({ name: "John", age: 30, location: "USA" });
   }, []);
