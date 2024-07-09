@@ -1,11 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import Count from "./count";
 
+type people = {
+  name: string;
+  age: number;
+  location?: string;
+};
+
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState<number>(0);
+  const [people, setPeople] = useState<people>();
+  // const emplyee = {
+  //   name: "Employee",
+  //   age: 48,
+  //   jobTitle: "Developer",
+  //   degree: "Bachelor",
+  // };
+
+  useEffect(() => {
+    setPeople({ name: "John", age: 30, location: "USA" });
+  }, []);
 
   function total(number1: number, number2: number): number {
     return number1 + number2;
