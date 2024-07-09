@@ -46,9 +46,31 @@ type Employee = People &
     level?: string | number | Degree;
   };
 
+type ApiResponse<DataType, MessageType = undefined> = {
+  data: DataType;
+  status: "success" | "failure";
+  message?: MessageType;
+};
+
+// type BookResponse = {
+//   data: { id: number; bookName: string };
+//   status: "success" | "failure";
+// };
+
 function App() {
   const [count, setCount] = useState<number>(0);
   const [people, setPeople] = useState<People>();
+
+  const userResponse: ApiResponse<{ id: number; name: string }> = {
+    data: { id: 1, name: "Joint" },
+    status: "success",
+  };
+
+  const bookResponse: ApiResponse<{ id: number; bookName: string }> = {
+    data: { id: 1, bookName: "book" },
+    status: "success",
+  };
+
   const employee: Employee = {
     name: "Employee",
     age: 48,
@@ -68,6 +90,8 @@ function App() {
     childName: "Child",
     level: "Level",
   };
+
+  console.log(people, userResponse, bookResponse, employee2);
 
   useEffect(() => {
     setPeople({ name: "John", age: 30, location: "USA" });
