@@ -20,6 +20,14 @@ import Count from "./count";
 //   degree: string;
 // }
 
+enum Degree {
+  ASSOCIATES = "ASSOCIATES",
+  BACHELORS = "BACHELORS",
+  MASTERS = "MASTERS",
+  DOCTORATE = "DOCTORATE",
+  PROFESSIONAL = "PROFESSIONAL",
+}
+
 type People = {
   name: string;
   age: number;
@@ -34,7 +42,7 @@ type RelationShip = {
 type Employee = People &
   RelationShip & {
     jobTitle: string;
-    degree: string;
+    degree: Degree;
   };
 
 function App() {
@@ -44,7 +52,7 @@ function App() {
     name: "Employee",
     age: 48,
     jobTitle: "Developer",
-    degree: "Bachelor",
+    degree: Degree.BACHELORS,
     wifeName: "Wife",
     childName: "Child",
   };
