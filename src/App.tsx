@@ -7,6 +7,10 @@ import Count from "./count";
 function App() {
   const [count, setCount] = useState(0);
 
+  function total(number1: number, number2: number): number {
+    return number1 + number2;
+  }
+
   return (
     <>
       <div>
@@ -18,7 +22,7 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <Count count={count} setCount={setCount} />
+      <Count count={count} setCount={setCount} total={total} />
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
     </>
   );
