@@ -4,21 +4,21 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Count from "./count";
 
-// interface People {
-//   name: string;
-//   age: number;
-//   location?: string;
-// }
+interface People3 {
+  name: string;
+  age: number;
+  location?: string;
+}
 
-// interface RelationShip {
-//   wifeName: string;
-//   childName: string;
-// }
+interface RelationShip3 {
+  wifeName: string;
+  childName: string;
+}
 
-// interface Employee extends People, RelationShip {
-//   jobTitle: string;
-//   degree: string;
-// }
+interface Employee3 extends People3, RelationShip3 {
+  jobTitle: string;
+  degree: string;
+}
 
 enum Degree {
   ASSOCIATES = "ASSOCIATES",
@@ -91,7 +91,26 @@ function App() {
     level: "Level",
   };
 
+  const employee3: Employee3 = {
+    name: "Employee",
+    age: 48,
+    jobTitle: "Developer",
+    degree: Degree.BACHELORS,
+    wifeName: "Wife",
+    childName: "Child",
+  };
+
+  const employee4: typeof employee3 = {
+    name: "Employee2",
+    age: 48,
+    jobTitle: "Developer",
+    degree: Degree.BACHELORS,
+    wifeName: "Wife",
+    childName: "Child",
+  };
+
   console.log(people, userResponse, bookResponse, employee2);
+  console.log("employee4", employee4);
 
   useEffect(() => {
     setPeople({ name: "John", age: 30, location: "USA" });
@@ -100,6 +119,10 @@ function App() {
   function total(number1: number, number2: number): number {
     return number1 + number2;
   }
+
+  // function total(number1: number, number2: number): string {
+  //   return String(number1 + number2);
+  // }
 
   return (
     <>
